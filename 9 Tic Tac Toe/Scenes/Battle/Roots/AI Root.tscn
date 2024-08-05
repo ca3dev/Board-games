@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq85l45ncnuv1"]
+
+[ext_resource type="PackedScene" uid="uid://b7ajl5tio6n06" path="res://Scenes/Battle/Tiles/board.tscn" id="1_0lhip"]
+[ext_resource type="Script" path="res://Scenes/Battle/Root/turn.gd" id="2_umgub"]
+[ext_resource type="Script" path="res://Scenes/Battle/Score/score.gd" id="3_ilqfb"]
+[ext_resource type="PackedScene" uid="uid://dwsg48ao2xe22" path="res://Scenes/Battle/AI/root.tscn" id="4_rqoqe"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Board" parent="." instance=ExtResource("1_0lhip")]
+unique_name_in_owner = true
+position = Vector2(231, 78)
+LocalVersus = true
+idle = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(384, 216)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Code" type="Node" parent="."]
+
+[node name="Turn" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("2_umgub")
+TurnP1 = true
+HP = 81
+
+[node name="Score" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_ilqfb")
+
+[node name="AI" parent="Code" instance=ExtResource("4_rqoqe")]
+unique_name_in_owner = true
+
+[node name="AITimer" type="Timer" parent="Code/AI"]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="AIidle" type="Timer" parent="Code/AI"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Code/AI/AITimer" to="Board" method="_on_ai_timer_timeout"]
+[connection signal="timeout" from="Code/AI/AIidle" to="Board" method="_on_a_iidle_timeout"]

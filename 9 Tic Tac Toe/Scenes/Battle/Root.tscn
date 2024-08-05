@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ypbcq0mp2guj"]
+
+[ext_resource type="PackedScene" uid="uid://b7ajl5tio6n06" path="res://Scenes/Battle/Tiles/board.tscn" id="1_kuo18"]
+[ext_resource type="Script" path="res://Scenes/Battle/Root/turn.gd" id="2_jjhp2"]
+[ext_resource type="Script" path="res://Scenes/Battle/Score/score.gd" id="3_nhhfd"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Board" parent="." instance=ExtResource("1_kuo18")]
+unique_name_in_owner = true
+position = Vector2(231, 78)
+idle = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(384, 216)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Code" type="Node" parent="."]
+
+[node name="Turn" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("2_jjhp2")
+TurnP1 = true
+HP = 81
+
+[node name="Score" type="Node" parent="Code"]
+unique_name_in_owner = true
+script = ExtResource("3_nhhfd")

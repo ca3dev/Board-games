@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwsg48ao2xe22"]
+
+[ext_resource type="Script" path="res://Scenes/Battle/AI/root.gd" id="1_i7aip"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_i7aip")

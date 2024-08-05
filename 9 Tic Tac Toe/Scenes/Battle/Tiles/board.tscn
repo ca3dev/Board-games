@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ajl5tio6n06"]
+
+[ext_resource type="Script" path="res://Scenes/Battle/Tiles/board.gd" id="1_ixexv"]
+[ext_resource type="PackedScene" uid="uid://betl3nffh0m8a" path="res://Scenes/Battle/Tiles/tile.tscn" id="2_sno15"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_ixexv")
+size = Vector2i(9, 9)
+Tile = ExtResource("2_sno15")
