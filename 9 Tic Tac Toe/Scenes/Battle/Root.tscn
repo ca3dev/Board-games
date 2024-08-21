@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ypbcq0mp2guj"]
+[gd_scene load_steps=5 format=3 uid="uid://ypbcq0mp2guj"]
 
+[ext_resource type="PackedScene" uid="uid://dpdmippnqyisp" path="res://Scenes/Battle/GUI/background.tscn" id="1_bt6qb"]
 [ext_resource type="PackedScene" uid="uid://b7ajl5tio6n06" path="res://Scenes/Battle/Tiles/board.tscn" id="1_kuo18"]
 [ext_resource type="Script" path="res://Scenes/Battle/Root/turn.gd" id="2_jjhp2"]
 [ext_resource type="Script" path="res://Scenes/Battle/Score/score.gd" id="3_nhhfd"]
 
 [node name="Battle" type="Node2D"]
 
+[node name="Background" parent="." instance=ExtResource("1_bt6qb")]
+
 [node name="Board" parent="." instance=ExtResource("1_kuo18")]
 unique_name_in_owner = true
-position = Vector2(231, 78)
+position = Vector2(241, 81)
 idle = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkmmobeaq4g0y"]
+
+[ext_resource type="Script" path="res://Scenes/Menues/title.gd" id="1_1batv"]
+[ext_resource type="Texture2D" uid="uid://bxmnb0bgl836w" path="res://2D/GUI/asuka.png" id="1_tborq"]
+[ext_resource type="Texture2D" uid="uid://cor0lg6wdhuuj" path="res://2D/GUI/guides.png" id="2_25lc1"]
+[ext_resource type="FontFile" uid="uid://c2u0a73b3k0nt" path="res://Fonts/Lilita_One/LilitaOne-Regular.ttf" id="3_q3w2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh0dt"]
+bg_color = Color(0.258824, 0.117647, 0.580392, 0.721569)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16kta"]
+bg_color = Color(0.408327, 0.750398, 0.823799, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hllq"]
+bg_color = Color(0.862079, 0.225526, 0.19795, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2g58"]
+bg_color = Color(0.229521, 0.168613, 0.491004, 1)
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_1batv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 655.0
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 129.0
+offset_top = 78.0
+offset_right = 1012.0
+offset_bottom = 569.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kh0dt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 326)
+
+[node name="Asuka" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.545098)
+position = Vector2(934, 324)
+texture = ExtResource("1_tborq")
+
+[node name="Guides" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, 307)
+texture = ExtResource("2_25lc1")
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 340.0
+offset_top = 145.0
+offset_right = 476.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0.759154, 0.171381, 0.0417453, 1)
+theme_override_colors/font_outline_color = Color(0.331444, 0.0682424, 0.0130219, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_q3w2f")
+theme_override_font_sizes/font_size = 80
+text = "TIC
+TAC
+TOE"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 214.0
+offset_top = 78.0
+offset_right = 327.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0.925824, 0.730652, 0.0943203, 1)
+theme_override_colors/font_outline_color = Color(0.823465, 0.246358, 0.119375, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("3_q3w2f")
+theme_override_font_sizes/font_size = 200
+text = "9"
+
+[node name="Local" type="Button" parent="."]
+offset_left = 284.0
+offset_top = 481.0
+offset_right = 404.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q3w2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16kta")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2hllq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2g58")
+text = "LOCAL VS"
+
+[node name="cpu" type="Button" parent="."]
+offset_left = 573.0
+offset_top = 482.0
+offset_right = 693.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q3w2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16kta")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2hllq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2g58")
+text = "CPU VS"
+
+[connection signal="button_up" from="Local" to="." method="_on_local_button_up"]
+[connection signal="button_up" from="cpu" to="." method="_on_cpu_button_up"]

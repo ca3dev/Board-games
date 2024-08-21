@@ -8,6 +8,9 @@ var humancost = 0
 
 @export var debug : bool
 
+func _ready():
+	GUI.Update()
+
 func CalculateMove():
 	GetMap()
 	CalculateCost()

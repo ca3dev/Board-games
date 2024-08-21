@@ -4,3 +4,7 @@
 
 [node name="Variables" type="Node"]
 script = ExtResource("1_l6nqc")
+X_color = Color(0.892231, 0.177857, 0.176223, 1)
+X_outline = Color(0.479645, 0.0726674, 0.0590817, 1)
+O_color = Color(0.157386, 0.333422, 0.7496, 1)
+O_outline = Color(0.0729627, 0.116038, 0.361839, 1)

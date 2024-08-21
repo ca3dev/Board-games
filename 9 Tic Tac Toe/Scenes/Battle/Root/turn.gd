@@ -7,6 +7,7 @@ extends Node
 
 func _ready():
 	DataPaths.TurnCode =  self
+	GUI.ToShow()
 	
 
 func Click():

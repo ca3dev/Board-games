@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="9 Tic Tac Toe"
-run/main_scene="res://Scenes/Battle/Root.tscn"
+run/main_scene="res://Scenes/Menues/title.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 DataPaths="*res://Scenes/Battle/Variables/data_paths.tscn"
 GUI="*res://Scenes/Battle/GUI/gui.tscn"
 Variables="*res://Scenes/Battle/Variables/variables.tscn"
+Audio="*res://Scenes/Battle/Audio/audio.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [rendering]
 

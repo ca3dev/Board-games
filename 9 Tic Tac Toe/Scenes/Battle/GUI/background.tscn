@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpdmippnqyisp"]
+
+[ext_resource type="Texture2D" uid="uid://dfl3ocdrpfrk8" path="res://2D/GUI/background.png" id="1_tsq3w"]
+[ext_resource type="Texture2D" uid="uid://cor0lg6wdhuuj" path="res://2D/GUI/guides.png" id="2_lmfsf"]
+
+[node name="Background" type="ColorRect"]
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 1158.0
+offset_bottom = 654.0
+color = Color(0.889284, 0.82672, 0.826496, 1)
+metadata/_edit_lock_ = true
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+position = Vector2(443.5, 241)
+scale = Vector2(0.764094, 0.694118)
+texture = ExtResource("1_tsq3w")
+metadata/_edit_lock_ = true
+
+[node name="Guides" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(394.638, 212.5)
+scale = Vector2(0.663248, 0.654412)
+texture = ExtResource("2_lmfsf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 63.0
+offset_right = 584.0
+offset_bottom = 392.0
+color = Color(0.137722, 0.0573168, 0.00270183, 1)

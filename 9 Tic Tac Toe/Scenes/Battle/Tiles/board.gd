@@ -8,7 +8,6 @@ extends Node2D
 
 func _ready():
 	DataPaths.Board = self
-	
 	for x in size.x:
 		Map.append([])
 		for y in size.y:
@@ -40,14 +39,16 @@ func Click (pos):
 		if DataPaths.TurnCode.TurnP1 and idle:
 			ClickP1(pos)
 			%Turn.UpdateAIP1()
+			Audio.PlayPiece()
 			idle = false
 			%AITimer.start(0.2)
 	
 func ClickP1(pos):
 	if Map[pos.x][pos.y].id == 0:
+		Audio.PlayPiece()
 		if DataPaths.TurnCode.TurnP1:
 			if DataPaths.TurnCode.oid == 2:
-				GUI.SetComodin("comodin turn")
+				GUI.SetComodin("JOKER")
 			else:
 				GUI.SetComodin("")
 			DataPaths.TurnCode.xid += 1
@@ -58,7 +59,7 @@ func ClickP1(pos):
 				Map[pos.x][pos.y].id = 1
 		else:
 			if DataPaths.TurnCode.xid == 2:
-				GUI.SetComodin("comodin turn")
+				GUI.SetComodin("JOKER")
 			else:
 				GUI.SetComodin("")
 			DataPaths.TurnCode.oid += 1
@@ -75,7 +76,7 @@ func ClickP1(pos):
 
 func ClickAI():
 	if DataPaths.TurnCode.xid == 2:
-			GUI.SetComodin("comodin turn")
+			GUI.SetComodin("JOKER")
 	else:
 		GUI.SetComodin("")
 	DataPaths.TurnCode.oid += 1
@@ -84,12 +85,12 @@ func ClickAI():
 		var aipos = %AI.CalculateMove()
 		Map[aipos.x][aipos.y].id = 3
 		Map[aipos.x][aipos.y].Update()
-		%AIidle.start(0.5)
+		%AIidle.start(0.2)
 	else:
 		var aipos = %AI.CalculateMove()
 		Map[aipos.x][aipos.y].id = 2
 		Map[aipos.x][aipos.y].Update()
-		%AIidle.start(0.5)
+		%AIidle.start(0.2)
 	return true
 
 
